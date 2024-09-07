@@ -1,0 +1,25 @@
+///https://atcoder.jp/contests/abc370/tasks/abc370_a
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define endl "\n"
+#define ll long long
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+
+int main() {
+    optimize();
+    int L, R;
+    cin >> L >> R;
+
+    if (L == 1 && R == 0) {
+        cout << "Yes" << endl;
+    } else if (L == 0 && R == 1) {
+        cout << "No" << endl;
+    } else {
+        cout << "Invalid" << endl;
+    }
+
+    return 0;
+}
