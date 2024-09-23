@@ -1,0 +1,40 @@
+///https://atcoder.jp/contests/dp/tasks/dp_b
+
+#include <bits/stdc++.h>
+
+using namespace std;
+const int mx = 1e5+111;
+int n,k;
+int arr[mx];
+int dp[mx];
+int maxCost(int p)
+{
+    if(p==n) return 0;
+    if(dp[p]!= -1)  return dp[p];
+
+    int ret=2e9;
+
+    for(int j=1;j<=k;j++){
+        if(p+j<=n){
+        ret = min(ret ,abs(arr[p] - arr[p+j]) + maxCost(p+j));
+    }
+
+    }
+
+
+    dp[p] =ret;
+    return dp[p];
+
+}
+
+int main() {
+
+
+        cin>>n>>k;
+        for(int i=1;i<=n;i++)  cin>>arr[i];
+        memset(dp,-1,sizeof(dp));
+        int mx = maxCost(1);
+        cout<< mx<<endl;
+
+    return 0;
+}
